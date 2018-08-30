@@ -35,14 +35,14 @@ public class UserInfoServiceTest {
     @Test
     public void insert() {
         User user = new User();
-        user.setUsername("test");
-        user.setPassword("test");
+        user.setUsername("test22");
+        user.setPassword("test22");
         user.setCreateTime(new Date());
         user.setUpdateTime(new Date());
 
         UserInfo userInfo = new UserInfo();
-        userInfo.setName("test");
-        userInfo.setEmail("test@test.com");
+        userInfo.setName("test22");
+        userInfo.setEmail("test22@test.com");
 
         LOG.info("user表写入结果：" + userService.insert(user));
         LOG.info("user_info写入结果：" + userInfoService.insert(userInfo));
@@ -52,14 +52,14 @@ public class UserInfoServiceTest {
     @Test
     public void testTx() {
         User user = new User();
-        user.setUsername("test");
-        user.setPassword("test");
+        user.setUsername("test11");
+        user.setPassword("test11");
         user.setCreateTime(new Date());
         user.setUpdateTime(new Date());
 
         UserInfo userInfo = new UserInfo();
-        userInfo.setName("test");
-        userInfo.setEmail("test@test.com");
+        userInfo.setName("test11");
+        userInfo.setEmail("test11@test.com");
 
         int res1 = userService.insert(user);
         int res = userInfoService.insert(userInfo);
@@ -67,8 +67,8 @@ public class UserInfoServiceTest {
 //
 //        LOG.info("user表写入结果：" + userService.insert(user));
 //        LOG.info("user_info写入结果：" + userInfoService.insert(userInfo));
-        if (res == 1) {
-            throw new RuntimeException("测试回滚！");
-        }
+//        if (res == 1) {
+//            throw new RuntimeException("测试回滚！");
+//        }
     }
 }

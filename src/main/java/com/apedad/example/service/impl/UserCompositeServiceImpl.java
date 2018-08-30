@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.apedad.example.annotation.TargetDataSource;
+import com.apedad.example.commons.DataSourceKey;
 import com.apedad.example.entity.User;
 import com.apedad.example.entity.UserInfo;
 import com.apedad.example.service.UserCompositeService;
@@ -17,6 +19,7 @@ public class UserCompositeServiceImpl implements UserCompositeService{
     @Autowired
     private UserService userService;
 	@Override
+    @TargetDataSource(dataSourceKey = DataSourceKey.DB_OTHER)
 	@Transactional
 	public int save(User u, UserInfo ui) {
         int res1 = userService.insert(u);
